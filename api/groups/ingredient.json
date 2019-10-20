@@ -14,11 +14,11 @@
     "descriptor": {
       "model": "descriptor"
     },
-    "food": {
-      "model": "food"
-    },
     "title": {
       "type": "string"
+    },
+    "food": {
+      "model": "food"
     }
   }
 }

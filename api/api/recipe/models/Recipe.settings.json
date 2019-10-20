@@ -35,9 +35,11 @@
       "type": "integer"
     },
     "tags": {
-      "collection": "tag"
+      "collection": "tag",
+      "via": "recipes",
+      "dominant": true
     },
-    "Ingredients": {
+    "ingredients": {
       "group": "ingredient",
       "repeatable": true,
       "type": "group"
@@ -54,7 +56,8 @@
     },
     "categories": {
       "collection": "category",
-      "via": "recipe"
+      "via": "recipes",
+      "dominant": true
     },
     "preparation": {
       "type": "richtext"

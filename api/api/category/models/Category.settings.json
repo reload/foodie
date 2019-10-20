@@ -14,8 +14,8 @@
       "unique": true,
       "type": "string"
     },
-    "recipe": {
-      "model": "recipe",
+    "recipes": {
+      "collection": "recipe",
       "via": "categories"
     }
   }

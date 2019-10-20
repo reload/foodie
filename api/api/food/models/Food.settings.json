@@ -38,7 +38,9 @@
       "type": "group"
     },
     "tags": {
-      "collection": "tag"
+      "collection": "tag",
+      "via": "foods",
+      "dominant": true
     }
   }
 }

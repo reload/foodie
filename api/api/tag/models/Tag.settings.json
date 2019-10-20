@@ -16,6 +16,14 @@
       "required": true,
       "type": "string",
       "unique": true
+    },
+    "foods": {
+      "collection": "food",
+      "via": "tags"
+    },
+    "recipes": {
+      "collection": "recipe",
+      "via": "tags"
     }
   }
 }
