@@ -55,6 +55,9 @@
     "categories": {
       "collection": "category",
       "via": "recipe"
+    },
+    "preparation": {
+      "type": "richtext"
     }
   }
 }
