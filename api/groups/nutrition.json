@@ -1,0 +1,19 @@
+{
+  "info": {
+    "name": "nutrition",
+    "description": ""
+  },
+  "connection": "default",
+  "collectionName": "groups_nutritions",
+  "attributes": {
+    "fat": {
+      "type": "integer"
+    },
+    "protein": {
+      "type": "integer"
+    },
+    "carb": {
+      "type": "integer"
+    }
+  }
+}

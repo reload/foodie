@@ -1,0 +1,16 @@
+{
+  "info": {
+    "name": "status",
+    "description": ""
+  },
+  "connection": "default",
+  "collectionName": "groups_statuses",
+  "attributes": {
+    "likes": {
+      "type": "integer"
+    },
+    "shared": {
+      "type": "integer"
+    }
+  }
+}

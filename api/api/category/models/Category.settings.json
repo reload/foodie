@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "",
+  "info": {
+    "name": "category",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "required": true,
+      "unique": true,
+      "type": "string"
+    },
+    "recipe": {
+      "model": "recipe",
+      "via": "categories"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "info": {
+    "name": "ingredient",
+    "description": ""
+  },
+  "connection": "default",
+  "collectionName": "groups_ingredients",
+  "attributes": {
+    "amount": {
+      "type": "decimal",
+      "required": true,
+      "min": 0
+    },
+    "descriptor": {
+      "model": "descriptor"
+    },
+    "food": {
+      "model": "food"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

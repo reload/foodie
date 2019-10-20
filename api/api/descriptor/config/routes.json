@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/descriptors",
+      "handler": "Descriptor.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/descriptors/count",
+      "handler": "Descriptor.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/descriptors/:id",
+      "handler": "Descriptor.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/descriptors",
+      "handler": "Descriptor.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/descriptors/:id",
+      "handler": "Descriptor.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/descriptors/:id",
+      "handler": "Descriptor.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

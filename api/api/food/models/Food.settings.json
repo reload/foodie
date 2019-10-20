@@ -1,17 +1,44 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "food",
   "info": {
     "name": "food",
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "title": {
       "required": true,
       "type": "string"
+    },
+    "subtitle": {
+      "required": true,
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "price": {
+      "type": "decimal",
+      "required": true
+    },
+    "nutrition": {
+      "group": "nutrition",
+      "type": "group"
+    },
+    "tags": {
+      "collection": "tag"
     }
   }
 }

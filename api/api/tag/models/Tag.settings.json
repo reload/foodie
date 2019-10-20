@@ -1,0 +1,21 @@
+{
+  "connection": "default",
+  "collectionName": "tag",
+  "info": {
+    "name": "tag",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "value": {
+      "required": true,
+      "type": "string",
+      "unique": true
+    }
+  }
+}

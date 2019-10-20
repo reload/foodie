@@ -1,0 +1,60 @@
+{
+  "connection": "default",
+  "collectionName": "recipe",
+  "info": {
+    "name": "recipe",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "title": {
+      "required": true,
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "chef": {
+      "model": "chef"
+    },
+    "persons": {
+      "type": "string"
+    },
+    "calories": {
+      "type": "integer"
+    },
+    "tags": {
+      "collection": "tag"
+    },
+    "Ingredients": {
+      "group": "ingredient",
+      "repeatable": true,
+      "type": "group"
+    },
+    "suggested_price": {
+      "type": "decimal"
+    },
+    "comments": {
+      "collection": "comment"
+    },
+    "Status": {
+      "group": "status",
+      "type": "group"
+    },
+    "categories": {
+      "collection": "category",
+      "via": "recipe"
+    }
+  }
+}
