@@ -18,7 +18,7 @@ services:
     depends_on:
       - db
     working_dir: /usr/src/api/
-    command: yarn develop
+    command: bash -c "yarn && yarn develop"
     restart: always
 
   db:
