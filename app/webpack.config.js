@@ -121,6 +121,7 @@ if (process.env.NODE_ENV == "development") {
         port: 3000,
         proxy: "https://localhost:8080/",
         notify: false,
+        open: false,
         https: {
           key: "./localhost-key.pem",
           cert: "./localhost.pem"
