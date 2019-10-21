@@ -12,6 +12,10 @@ import imgDessert3 from '../../../img/images/dessert3.png'
 
 import Image from '../../components/image'
 
+import { useQuery } from "urql"
+import gql from 'graphql-tag'
+import { api } from "../../api/util"
+
 const SliderNavigationItem = styled(Link)({
   ...headerSliderNavigation,
   marginRight: "20px",
@@ -55,110 +59,46 @@ const SliderItem = styled(Div)({
     }
 })
 
-const sliderNavigationData= [
-  {
-    navName: "dessert", 
-    navUrl: "101"
-  },
-  {
-    navName: "smoothie", 
-    navUrl: "102"
-  },
-  {
-    navName: "barbecue", 
-    navUrl: "104"
-  },
-  {
-    navName: "vegan",
-    navUrl: "105"
-  },
-  {
-    navName: "paleo",
-    navUrl: "106"
-  },
-  {
-    navName: "sea snacks",
-    navUrl: "107"
-  },
-  {
-    navName: "plant based",
-    navUrl: "108"
-  },
-]
-
-const sliderItemData = [
-  {
-    header: "Strawberry Cream Waffles",
-    price: "$7.0",
-    kcal: 274,
-    img: imgDessert1
-  },
-  {
-    header: "Croissant blue berry fruit",
-    price: "$17.0",
-    kcal: 351,
-    img: imgDessert2
-  },{
-    header: "Chocolate lemon cupcake",
-    price: "$17.0",
-    kcal: 442,
-    img: imgDessert3
-  },
-  {
-    header: "Strawberry Cream Waffles",
-    price: "$7.0",
-    kcal: 274,
-    img: imgDessert1
-  },
-  {
-    header: "Croissant blue berry fruit",
-    price: "$17.0",
-    kcal: 351,
-    img: imgDessert2
-  },
-  {
-    header: "Strawberry Cream Waffles",
-    price: "$7.0",
-    kcal: 274,
-    img: imgDessert1
-  },
-  {
-    header: "Croissant blue berry fruit",
-    price: "$17.0",
-    kcal: 351,
-    img: imgDessert2
-  },{
-    header: "Chocolate lemon cupcake",
-    price: "$17.0",
-    kcal: 442,
-    img: imgDessert3
-  },
-  {
-    header: "Strawberry Cream Waffles",
-    price: "$7.0",
-    kcal: 274,
-    img: imgDessert1
-  },
-  {
-    header: "Croissant blue berry fruit",
-    price: "$17.0",
-    kcal: 351,
-    img: imgDessert2
+const getCategories = gql`
+{
+  categories {
+    id
+    title
+    recipes {
+      id
+      title
+      calories
+      suggested_price
+      image {
+        url
+      }
+    }
   }
-]
+}
+`
 
 const HomeSlider = () => {
+    const [res] = useQuery({
+      query: getCategories
+    })
+    const ready = !res.fetching && !res.error
     return (
       <Div width="100vw"  flexDirection={"column"}>
 
-        <Div style={{overflow: "scroll"}} p={4} pb={0}>
+        <Div
+          style={{
+            overflow: "scroll"
+          }}
+          p={4}
+          pb={0}
+        >
             {
-              sliderNavigationData.map(i => (
+              ready && res.data.categories.map(({id, title}, index) => (
                 <SliderNavigationItem 
-                  key={i.navUrl}
+                  key={id}
                   to={"/"}>
-                  <P pb={"6px"}>{i.navName}</P>
-                  <SliderNavigationBar active={i.navUrl === "101"} />
+                  <P pb={"6px"}>{title}</P>
+                  <SliderNavigationBar active={index === 0} />
                 </SliderNavigationItem> 
               ))
             }
@@ -167,14 +107,14 @@ const HomeSlider = () => {
         <Div style={{overflow: "scroll"}}>
           <SliderContainer py={4} pt={2}>
             {
-              sliderItemData.map((i,index) => {
-                  return <SliderItem p={2} key={index}>
-                    <Image src={i.img} style={{width: "100%", height: "100px", objectFit: "cover"}} alt=""/>
-                    <P style={headerCardPrimary}>{i.header}</P>
-                    <P style={headerCardSecondary}>{i.price}</P>
+              ready && res.data.categories[0].recipes.map(recipe => {
+                  return <SliderItem p={2} key={recipe.id}>
+                    <Image src={api(recipe.image.url)} style={{width: "100%", height: "100px", objectFit: "cover"}} alt=""/>
+                    <P style={headerCardPrimary}>{recipe.title}</P>
+                    <P style={headerCardSecondary}>{recipe.suggested_price ? '$' + recipe.suggested_price : ''}</P>
                     <Div mt={1}>
                       <IconKcal />
-                      <P ml="5px" style={{...headerCardTiny, lineHeight: "16px"}}>{i.kcal + " kcal"}</P>
+                      <P ml="5px" style={{...headerCardTiny, lineHeight: "16px"}}>{recipe.calories + " kcal"}</P>
                     </Div>
                   </SliderItem>
               })

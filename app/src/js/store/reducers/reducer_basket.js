@@ -23,23 +23,7 @@ const initialState = {
         f6: {
             id: 'f6',
             quantity: 6
-        },
-        // f7: {
-        //     id: 'f7',
-        //     quantity: 2
-        // },
-        // f8: {
-        //     id: 'f8',
-        //     quantity: 2
-        // },
-        // f9: {
-        //     id: 'f9',
-        //     quantity: 6
-        // },
-        // f10: {
-        //     id: 'f10',
-        //     quantity: 6
-        // }
+        }
     }
 }
 

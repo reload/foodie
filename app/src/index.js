@@ -8,8 +8,11 @@ import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider } from 'emotion-theming'
 
-import { Provider } from 'react-redux'
+import { Provider as Redux } from 'react-redux'
 import { createStore } from 'redux'
+
+import { Provider as GQL } from 'urql'
+import { gqlClient } from './js/api/gql';
 
 // MODULES
 import App from "./js/app";
@@ -50,11 +53,13 @@ const store = createStore(rootReducer, composeWithDevTools())
 const root = document.getElementById("root")
 
 ReactDOM.render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <Router>
-        <App />
-      </Router>
-    </ThemeProvider>
-  </Provider>
-, root);
+  <GQL value={gqlClient}>
+    <Redux store={store}>
+      <ThemeProvider theme={theme}>
+        <Router>
+          <App />
+        </Router>
+      </ThemeProvider>
+    </Redux>
+  </GQL>
+, root)

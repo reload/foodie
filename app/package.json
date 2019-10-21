@@ -52,6 +52,8 @@
     "chroma-js": "^2.0.6",
     "debounce": "^1.2.0",
     "emotion-theming": "^10.0.14",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-interactable": "^0.6.4",
@@ -64,6 +66,7 @@
     "react-with-gesture": "^4.0.8",
     "redux": "^4.0.4",
     "serviceworker-webpack-plugin": "^1.0.1",
-    "styled-system": "^5.0.16"
+    "styled-system": "^5.0.16",
+    "urql": "^1.6.1"
   }
 }
