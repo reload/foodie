@@ -41,7 +41,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "@capacitor/android": "^1.2.1",
-    "@capacitor/cli": "^1.2.1",
+    "@capacitor/cli": "^2.0.0",
     "@capacitor/core": "^1.2.1",
     "@emotion/babel-preset-css-prop": "^10.0.9",
     "@emotion/core": "^10.0.10",
