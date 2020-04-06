@@ -10664,6 +10664,27 @@ strapi-helper-plugin@3.0.0-beta.17.2:
     styled-components "^4.3.1"
     whatwg-fetch "^2.0.3"
 
+strapi-helper-plugin@3.0.0-beta.17.3:
+  version "3.0.0-beta.17.3"
+  resolved "https://registry.yarnpkg.com/strapi-helper-plugin/-/strapi-helper-plugin-3.0.0-beta.17.3.tgz#a56c99bbad1e567f5f8b1beec8dfa23f9cdc8b99"
+  integrity sha512-uYosx/GE/wJ7vglnHpHu+7LJ8wr+5nrjQt3DlNEQL9bm2jW1kkebnXVSXBvmFnHuCiWsZLA8j39qs55qLMFcSQ==
+  dependencies:
+    bootstrap "^4.3.1"
+    classnames "^2.2.5"
+    immutable "^3.8.2"
+    invariant "^2.2.1"
+    lodash "^4.17.5"
+    moment "^2.16.0"
+    react "^16.9.0"
+    react-datetime "^2.16.3"
+    react-dom "^16.9.0"
+    react-intl "^2.8.0"
+    react-router "^5.0.0"
+    react-router-dom "^5.0.0"
+    reactstrap "^8.0.1"
+    styled-components "^4.3.1"
+    whatwg-fetch "^2.0.3"
+
 strapi-hook-mongoose@3.0.0-beta.17.2:
   version "3.0.0-beta.17.2"
   resolved "https://registry.yarnpkg.com/strapi-hook-mongoose/-/strapi-hook-mongoose-3.0.0-beta.17.2.tgz#03cbb55ddb21d4e8c2885bf48de628c44823d567"
@@ -10761,10 +10782,10 @@ strapi-plugin-graphql@3.0.0-beta.17.2:
     pluralize "^7.0.0"
     strapi-utils "3.0.0-beta.17.2"
 
-strapi-plugin-settings-manager@3.0.0-beta.17.2:
-  version "3.0.0-beta.17.2"
-  resolved "https://registry.yarnpkg.com/strapi-plugin-settings-manager/-/strapi-plugin-settings-manager-3.0.0-beta.17.2.tgz#eecd403bd933323058107ab1bd9c17b330d8a0ca"
-  integrity sha512-3b/jhXeiGzh6NWXIUTiwYVFF5QeyVWy3H2kMg2Kl2NesWbZfvjvAlRrbwbSh7zMmL59xiy63rGdmihPvS81Brg==
+strapi-plugin-settings-manager@3.0.0-beta.17.3:
+  version "3.0.0-beta.17.3"
+  resolved "https://registry.yarnpkg.com/strapi-plugin-settings-manager/-/strapi-plugin-settings-manager-3.0.0-beta.17.3.tgz#8afc789bceb71d3a52609720d4bd1f634bc4b5c7"
+  integrity sha512-+b0jQWirqbrfFpPz3OAS5jvtngnaioj6IpnuPAxpgrWOwJQO25wX65xKhwXIbo2+Z2qbMfzz8UDogS1UY5Ty0g==
   dependencies:
     classnames "^2.2.6"
     immutable "^3.8.2"
@@ -10782,7 +10803,7 @@ strapi-plugin-settings-manager@3.0.0-beta.17.2:
     redux "^4.0.1"
     reselect "^3.0.1"
     shelljs "^0.7.8"
-    strapi-helper-plugin "3.0.0-beta.17.2"
+    strapi-helper-plugin "3.0.0-beta.17.3"
 
 strapi-plugin-upload@3.0.0-beta.17.2:
   version "3.0.0-beta.17.2"
